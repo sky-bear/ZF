@@ -188,6 +188,7 @@ let a = 2;
 - if/else
 - 三元运算符
 - switch case
+- 判断时使用 `===`绝对相等
 - do-while 后测试循环语句
 
   > 至少执行一次
@@ -214,3 +215,20 @@ let a = 2;
 - break 和 continue 语句
   - break 语句会立即退出循环， 强制执行**循环后面**的语句
   - continue 立即退出循环， 但退出循环后会从循环的顶部继续执行
+
+### 元素对象的理解
+
+> 修改 dom 的样式,修改的是堆内存中的值（只要堆内存中的值被修改，浏览器会基于 DOM 映射机制把页面的元素进行重新渲染）
+
+```javascript
+// 1
+box.style.color = "red"; // 生效
+
+// 2
+const a = box.style;
+a.color = "red"; // 生效
+
+// 3
+const b = box.style.color; // 拿到的是一个基本类型的值
+b = "pink"; // 不生效 修改的值不是堆内存中信息， 不起作用
+```
