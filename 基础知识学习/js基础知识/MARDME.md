@@ -153,3 +153,64 @@ let a = 2;
 // 2. 把对象中的键值对（属性名：属性值）依次存储到堆内存中
 // 3.把堆内存地址和变量关联起来
 ```
+
+![图片说明](https://xk-hd2.tanzhou.cn/file/schedule/practice/20210420/13/20210420134500258593037.jpg?name=企业微信截图_16188974676924.png)
+
+### 数据类型判断
+
+- typeof[val]: 用来检测数据类型的运算符
+
+  > 1.首先是一个字符串 2. 字符串中包含对应的数据类型
+  > 局限性
+
+  - typeof null => "object"
+  - 无法区分其他对象
+
+  ```javascript
+  console.log(typeof 1); // number
+  console.log(typeof NaN); // number
+  console.log(typeof "1"); // string
+  console.log(typeof []); // object
+  console.log(typeof {}); // object
+  console.log(typeof null); // object
+  console.log(typeof undefined); // undefined
+  console.log(typeof function () {}); // function
+  ```
+
+- instanceof: 用来检测当前实例是否属于某个类
+- constructor:基于构造函数检测数据类型(也是基于类的方式)
+- Object.prototype.toString.call(): 检测数据类型最好的方法
+
+### JS 中的操作语句： 判断，循环
+
+> 条件成立做什么？ 不成立做什么
+
+- if/else
+- 三元运算符
+- switch case
+- do-while 后测试循环语句
+
+  > 至少执行一次
+
+  ```javascript
+  let i = 1;
+  do {
+    i++;
+    console.log(1);
+  } while (i < 10);
+  ```
+
+- while 前测试循环语句， 先满足条件，在执行
+
+  ```javascript
+  let i = 0;
+  while (i < 10) {
+    i += 2;
+  }
+  ```
+
+- for 语句 具有在执行循环之前初始化变量和定义循环后要执行的代码的能力
+- for in 用来枚举对象的属性，包括[[prototype]]
+- break 和 continue 语句
+  - break 语句会立即退出循环， 强制执行**循环后面**的语句
+  - continue 立即退出循环， 但退出循环后会从循环的顶部继续执行

@@ -21,11 +21,31 @@ A.fn();
 
 let a = 10 + null + true + [] + undefined + "aa" + null + [] + 10 + false;
 
-// 11undefinedaanull10false
+const n = [100, 20, 400];
+const x = [200, 300];
+const m = [200, 300];
 
-const b = {
-  1: 1000,
+let n = [10, 20];
+let m = n;
+let x = m;
+m[0] = 100;
+x = [30, 40];
+x[0] = 200;
+m = x;
+m[1] = 300;
+n[2] = 400;
+console.log(x, m, n);
+
+// const a = { n: 2 };
+// const b = { n: 1, x: { n: 2 } };
+
+let a = { n: 1 };
+let b = a;
+
+a.x = a = {
+  n: 2,
 };
-Object.keys(b).forEach((key) => {
-  console.log(typeof key);
-});
+
+console.log(a, b);
+a.y = 5;
+console.log(a, b);
