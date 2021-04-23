@@ -14,19 +14,19 @@
 //   console.log(1);
 // } while (i < 10);
 
-
 let num = 0;
-for(let i = 0;i<3; i++) {
-  for (let j = 0; j< 3;j++) {
-    console.log(i,j,num)
-    if(i===1 && j === 1) {
-      console.log(i,j)
-      break;
-    };
-    num ++;
+out: for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    if (i === 5 && j === 5) {
+      console.log(i, j);
+      break out;
+    }
+    num++;
   }
 }
-console.log(num)
+console.log(num);
 
-
-
+const aa = { n: 1 };
+for (let a in aa) {
+  console.log(a);
+}
